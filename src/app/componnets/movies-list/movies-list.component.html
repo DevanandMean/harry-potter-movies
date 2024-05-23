@@ -1,0 +1,21 @@
+<h3>Filters</h3>
+<div class="row filter">
+  <label for="movieTitle">Title</label>
+  <input type="text" id="movieTitle" class="col-sm-3" [(ngModel)]="title"
+    (ngModelChange)="searchByTitleAndReleaseYear()"> &nbsp;
+  <label for="releaseYear">Release Year</label>
+  <input type="text" id="releaseYear" class="col-sm-3" [(ngModel)]="releaseYear"
+    (ngModelChange)="searchByTitleAndReleaseYear()">
+</div>
+<div class="container">
+  <div class="row" *ngFor="let movie of moviesToDisplay">
+    <div class="col-sm-10 movie-row">
+      <div class="title">{{movie.title}}</div>
+      <span>Release date: {{movie.release_date}}</span> &nbsp;<span>Budget: {{movie.budget | customCurrency}}</span>
+      &nbsp;<span>Duration: {{movie.duration | hours}}</span>
+    </div>
+    <div class="col-sm-2">
+      <button type="button" (click)="naviagteMovieDetail(movie.id)"> Details </button>
+    </div>
+  </div>
+</div>
