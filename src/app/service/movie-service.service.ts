@@ -9,7 +9,7 @@ import { MovieDetail } from '../model/movieDetail';
 })
 export class MovieServiceService {
 
-  movieURL = "/movies";
+  movieURL:string = "/movies";
 
   constructor(private http: HttpClient) { }
 

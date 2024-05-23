@@ -29,7 +29,7 @@ export class MovieDetailsComponent implements OnInit {
     });
   }
 
-  back() {
+  back(): void {
     this.router.navigate(["movies"])
   }
 }

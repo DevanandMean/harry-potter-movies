@@ -32,7 +32,7 @@ export class MoviesListComponent implements OnInit {
   }
 
   searchByTitleAndReleaseYear(): void {
-    const title = this.title.toLowerCase().trim();
+    const title: string = this.title.toLowerCase().trim();
     const releaseYear: string = this.releaseYear.trim();
     if (title || releaseYear) {
       this.moviesToDisplay = this.movies.filter((ele: Movie) => ele.title.toLowerCase().includes(title ?? "") && this.extractYear(ele.release_date).includes(releaseYear ?? ""));
